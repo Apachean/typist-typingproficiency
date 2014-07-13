@@ -6,9 +6,11 @@ A tool to help develop one's _typing proficiency_, and to monitor thine progress
 Features
 ===
   - [ ] Accounts:
+    - [ ] Create account
     - [ ] Login
-    - [ ] Switch account
     - [ ] Auto login feature
+    - [ ] Generate table for global typing proficiency data
+    - [ ] Set privileges for account
   - [x] Metro UI
   - [ ] Save data to MySQL database
   - [ ] Record typing proficiency:
