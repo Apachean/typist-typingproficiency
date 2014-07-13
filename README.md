@@ -9,7 +9,7 @@ Features
     - [ ] Login
     - [ ] Switch account
     - [ ] Auto login feature
-  - [ ] Metro UI
+  - [x] Metro UI
   - [ ] Save data to MySQL database
   - [ ] Record typing proficiency:
     - [ ] Dates
