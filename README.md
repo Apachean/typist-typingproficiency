@@ -1,6 +1,6 @@
 Typist
 ===
-A tool to help develop one's _typing proficiency_, and to monitor thine progress. This tool focuses mainly on _code typing proficiency_.
+A tool to help develop one's _typing proficiency_, and to monitor thine progress. The tool focuses principally on _code typing proficiency_.
 
 
 Features
