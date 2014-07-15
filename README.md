@@ -5,14 +5,14 @@ A tool to help develop one's _typing proficiency_, and to monitor thine progress
 
 Features
 ===
-  - [ ] Accounts:
+  - [x] Accounts:
     - [x] Create account
     - [x] Login
     - [x] Auto login feature
-    - [ ] Generate table for global typing proficiency data
+    - [x] Generate table for global typing proficiency data
     - [x] Set privileges for account
   - [x] Metro UI
-  - [ ] Save data to MySQL database
+  - [x] Save data to MySQL database
   - [ ] Record typing proficiency:
     - [ ] Dates
     - [ ] Keys per minute
