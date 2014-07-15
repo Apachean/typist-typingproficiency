@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.login = new MetroFramework.Controls.MetroPanel();
-            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
+            this.autoLogin = new MetroFramework.Controls.MetroCheckBox();
             this.spinnerLogin = new MetroFramework.Controls.MetroProgressSpinner();
             this.gotoRegister = new MetroFramework.Controls.MetroLink();
             this.completeLogin = new MetroFramework.Controls.MetroButton();
@@ -50,7 +50,7 @@
             // login
             // 
             this.login.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.login.Controls.Add(this.metroCheckBox1);
+            this.login.Controls.Add(this.autoLogin);
             this.login.Controls.Add(this.spinnerLogin);
             this.login.Controls.Add(this.gotoRegister);
             this.login.Controls.Add(this.completeLogin);
@@ -73,24 +73,26 @@
             this.login.VerticalScrollbarHighlightOnWheel = false;
             this.login.VerticalScrollbarSize = 0;
             // 
-            // metroCheckBox1
+            // autoLogin
             // 
-            this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.CustomBackground = false;
-            this.metroCheckBox1.CustomForeColor = true;
-            this.metroCheckBox1.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.metroCheckBox1.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.metroCheckBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.metroCheckBox1.Location = new System.Drawing.Point(13, 284);
-            this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(89, 19);
-            this.metroCheckBox1.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroCheckBox1.StyleManager = null;
-            this.metroCheckBox1.TabIndex = 8;
-            this.metroCheckBox1.Text = "Auto login";
-            this.metroCheckBox1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroCheckBox1.UseStyleColors = true;
-            this.metroCheckBox1.UseVisualStyleBackColor = true;
+            this.autoLogin.AutoSize = true;
+            this.autoLogin.Checked = global::Typist.Properties.Settings.Default.checkAutoLogin;
+            this.autoLogin.CustomBackground = false;
+            this.autoLogin.CustomForeColor = true;
+            this.autoLogin.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Typist.Properties.Settings.Default, "checkAutoLogin", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.autoLogin.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.autoLogin.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.autoLogin.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.autoLogin.Location = new System.Drawing.Point(13, 284);
+            this.autoLogin.Name = "autoLogin";
+            this.autoLogin.Size = new System.Drawing.Size(89, 19);
+            this.autoLogin.Style = MetroFramework.MetroColorStyle.Lime;
+            this.autoLogin.StyleManager = null;
+            this.autoLogin.TabIndex = 8;
+            this.autoLogin.Text = "Auto login";
+            this.autoLogin.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.autoLogin.UseStyleColors = true;
+            this.autoLogin.UseVisualStyleBackColor = true;
             // 
             // spinnerLogin
             // 
@@ -141,6 +143,7 @@
             // 
             this.Login_userBox.CustomBackground = false;
             this.Login_userBox.CustomForeColor = true;
+            this.Login_userBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Typist.Properties.Settings.Default, "uid", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Login_userBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.Login_userBox.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
             this.Login_userBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -152,7 +155,7 @@
             this.Login_userBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.Login_userBox.StyleManager = null;
             this.Login_userBox.TabIndex = 4;
-            this.Login_userBox.Text = "Username";
+            this.Login_userBox.Text = global::Typist.Properties.Settings.Default.uid;
             this.Login_userBox.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Login_userBox.UseStyleColors = false;
             // 
@@ -160,6 +163,7 @@
             // 
             this.Login_passBox.CustomBackground = false;
             this.Login_passBox.CustomForeColor = true;
+            this.Login_passBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Typist.Properties.Settings.Default, "pwd", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Login_passBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.Login_passBox.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
             this.Login_passBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
@@ -171,7 +175,7 @@
             this.Login_passBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.Login_passBox.StyleManager = null;
             this.Login_passBox.TabIndex = 3;
-            this.Login_passBox.Text = "Password";
+            this.Login_passBox.Text = global::Typist.Properties.Settings.Default.pwd;
             this.Login_passBox.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Login_passBox.UseStyleColors = false;
             // 
@@ -328,8 +332,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 432);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.register);
             this.Controls.Add(this.login);
+            this.Controls.Add(this.register);
             this.Location = new System.Drawing.Point(0, 0);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -360,7 +364,7 @@
         private MetroFramework.Controls.MetroTextBox Register_passBox;
         private MetroFramework.Controls.MetroProgressSpinner spinnerRegister;
         private MetroFramework.Controls.MetroProgressSpinner spinnerLogin;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
+        private MetroFramework.Controls.MetroCheckBox autoLogin;
         private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }
