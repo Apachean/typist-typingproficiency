@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework;
+
+using MetroFramework.Forms;
+
 using MySql.Data.MySqlClient;
 
 namespace Typist
 {
-    public partial class Accounts : MetroFramework.Forms.MetroForm
+    public partial class Accounts : MetroForm
     {
         public Accounts()
         {
@@ -21,7 +23,6 @@ namespace Typist
 
         private void Accounts_Load(object sender, EventArgs e)
         {
-
         }
 
         private void gotoRegister_Click(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace Typist
             login.SendToBack();
             register.BringToFront();
         }
+
         private void gotoLogin_Click(object sender, EventArgs e)
         {
             login.BringToFront();
@@ -38,43 +40,105 @@ namespace Typist
 
         private void createUser_AsROOT(string user, string pass)
         {
-            string connstr = "Server=localhost;user=root;port3306;password=homebase;";
-            using (var conn = new MySqlConnection(connstr))
-            using (var cmd = conn.CreateCommand())
+            // TODO: Disallow use of the character '_' so there can be no error with create database
+            // TODO: MetroUI MessageBox
+            string connstr = "server=127.0.0.1;uid=root;port=3306;pwd=homebase;";
+            
+            try 
             {
-                // open, 
-                conn.Open();
-                // Set the authentication to sha256 passwords
-                cmd.CommandText = "CREATE USER '" + user + "'@'localhost' IDENTIFIED BY sha256_password;";
-                cmd.CommandText = "SET old_passwords = 2;";
-                // Set password
-                cmd.CommandText = "SET PASSWORD FOR '" + user + "'@'localhost' = PASSWORD('" + pass + "');";
-
-                // Create user's table data database
-                cmd.CommandText = "CREATE DATABASE IF NOT EXISTS '" + user + "_db'";
-
-                try
+                using (var conn = new MySqlConnection(connstr))
+                using (var cmd = conn.CreateCommand())
                 {
-                    cmd.ExecuteNonQuery();
+                    conn.Open();
+                    // Set the authentication to sha256 passwords
+                    // Cannot use SHA256 passwords until mysql is configured with SSL
+
+                    //SHA256 cmd.CommandText = "CREATE USER '" + user + "'@'127.0.0.1' IDENTIFIED WITH sha256_password;";
+                    cmd.CommandText = "CREATE USER '" + user + "'@'127.0.0.1' IDENTIFIED BY '" + pass + "';";
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+                    //SHA256 cmd.CommandText = "SET old_passwords = 2;";
+                    // Set password
+                    //SHA256 cmd.CommandText = "SET PASSWORD FOR '" + user + "'@'127.0.0.1' = PASSWORD('" + pass + "');";
+
+                    // Create user's table data database
+                    cmd.CommandText = "CREATE DATABASE IF NOT EXISTS " + user + "_db";
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+                    // Give user access to the database created for them
+                    // Char 92 is '\'
+                    cmd.CommandText = "GRANT ALL PRIVILEGES ON `" + user + (char) 92 + "_db`.* TO '" + user + "'@'127.0.0.1' WITH GRANT OPTION";
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
                 }
-                catch (Exception e)
-                {
-                    // User already exists?
-                    throw;
-                }
+
             }
+            catch (MySqlException MSex)
+            {
+                MessageBox.Show(MSex.Message);
+            }
+
+            MessageBox.Show("Created.");
+
+            // Goto login
+            login.BringToFront();
+            register.SendToBack();
+
         }
 
         private void connectMySQL_AsUSER(string user, string pass)
         {
-            string connstr = "Server=localhost;Database=" + user + "_db;" + "user=" + user + ";port3306;password=" + pass + ";";
-            using (var conn = new MySqlConnection(connstr))
-            using (var cmd = conn.CreateCommand())
-            {
-                conn.Open();
+            string connstr = "server=127.0.0.1;database=" + user + "_db;" + "uid=" + user + ";port=3306;pwd=" + pass + ";";
 
+            try
+            {
+                using (var conn = new MySqlConnection(connstr))
+                using (var cmd = conn.CreateCommand())
+                {
+                    conn.Open();
+                    MessageBox.Show("Success");
+                }
+            }
+            catch (MySqlException MSex)
+            {
+                MessageBox.Show(MSex.Message);
             }
 
+        }
+
+        private void completeLogin_Click(object sender, EventArgs e)
+        {
+            connectMySQL_AsUSER(Login_userBox.Text, Login_passBox.Text);
+
+        }
+
+        private void completeRegister_Click(object sender, EventArgs e)
+        {
+            createUser_AsROOT(Register_userBox.Text, Register_passBox.Text);
         }
     }
 }

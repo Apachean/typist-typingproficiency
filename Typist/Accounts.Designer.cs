@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.login = new MetroFramework.Controls.MetroPanel();
-            this.register = new MetroFramework.Controls.MetroPanel();
-            this.Login_passBox = new MetroFramework.Controls.MetroTextBox();
-            this.Login_userBox = new MetroFramework.Controls.MetroTextBox();
-            this.completeLogin = new MetroFramework.Controls.MetroButton();
+            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
+            this.spinnerLogin = new MetroFramework.Controls.MetroProgressSpinner();
             this.gotoRegister = new MetroFramework.Controls.MetroLink();
+            this.completeLogin = new MetroFramework.Controls.MetroButton();
+            this.Login_userBox = new MetroFramework.Controls.MetroTextBox();
+            this.Login_passBox = new MetroFramework.Controls.MetroTextBox();
+            this.register = new MetroFramework.Controls.MetroPanel();
+            this.spinnerRegister = new MetroFramework.Controls.MetroProgressSpinner();
+            this.Register_nameBox = new MetroFramework.Controls.MetroTextBox();
             this.gotoLogin = new MetroFramework.Controls.MetroLink();
             this.completeRegister = new MetroFramework.Controls.MetroButton();
             this.Register_userBox = new MetroFramework.Controls.MetroTextBox();
             this.Register_passBox = new MetroFramework.Controls.MetroTextBox();
-            this.Register_nameBox = new MetroFramework.Controls.MetroTextBox();
-            this.spinnerRegister = new MetroFramework.Controls.MetroProgressSpinner();
-            this.spinnerLogin = new MetroFramework.Controls.MetroProgressSpinner();
-            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.login.SuspendLayout();
             this.register.SuspendLayout();
@@ -73,6 +73,108 @@
             this.login.VerticalScrollbarHighlightOnWheel = false;
             this.login.VerticalScrollbarSize = 0;
             // 
+            // metroCheckBox1
+            // 
+            this.metroCheckBox1.AutoSize = true;
+            this.metroCheckBox1.CustomBackground = false;
+            this.metroCheckBox1.CustomForeColor = true;
+            this.metroCheckBox1.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.metroCheckBox1.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.metroCheckBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.metroCheckBox1.Location = new System.Drawing.Point(13, 284);
+            this.metroCheckBox1.Name = "metroCheckBox1";
+            this.metroCheckBox1.Size = new System.Drawing.Size(89, 19);
+            this.metroCheckBox1.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroCheckBox1.StyleManager = null;
+            this.metroCheckBox1.TabIndex = 8;
+            this.metroCheckBox1.Text = "Auto login";
+            this.metroCheckBox1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroCheckBox1.UseStyleColors = true;
+            this.metroCheckBox1.UseVisualStyleBackColor = true;
+            // 
+            // spinnerLogin
+            // 
+            this.spinnerLogin.Backwards = true;
+            this.spinnerLogin.CustomBackground = false;
+            this.spinnerLogin.Location = new System.Drawing.Point(143, 33);
+            this.spinnerLogin.Maximum = 100;
+            this.spinnerLogin.Name = "spinnerLogin";
+            this.spinnerLogin.Size = new System.Drawing.Size(16, 16);
+            this.spinnerLogin.Style = MetroFramework.MetroColorStyle.Teal;
+            this.spinnerLogin.StyleManager = null;
+            this.spinnerLogin.TabIndex = 7;
+            this.spinnerLogin.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.spinnerLogin.Value = 33;
+            // 
+            // gotoRegister
+            // 
+            this.gotoRegister.CustomBackground = false;
+            this.gotoRegister.CustomForeColor = true;
+            this.gotoRegister.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.gotoRegister.FontWeight = MetroFramework.MetroLinkWeight.Regular;
+            this.gotoRegister.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.gotoRegister.Location = new System.Drawing.Point(207, 288);
+            this.gotoRegister.Name = "gotoRegister";
+            this.gotoRegister.Size = new System.Drawing.Size(75, 23);
+            this.gotoRegister.Style = MetroFramework.MetroColorStyle.Blue;
+            this.gotoRegister.StyleManager = null;
+            this.gotoRegister.TabIndex = 6;
+            this.gotoRegister.Text = "REGISTER";
+            this.gotoRegister.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.gotoRegister.UseStyleColors = false;
+            this.gotoRegister.Click += new System.EventHandler(this.gotoRegister_Click);
+            // 
+            // completeLogin
+            // 
+            this.completeLogin.Highlight = false;
+            this.completeLogin.Location = new System.Drawing.Point(13, 221);
+            this.completeLogin.Name = "completeLogin";
+            this.completeLogin.Size = new System.Drawing.Size(270, 45);
+            this.completeLogin.Style = MetroFramework.MetroColorStyle.Blue;
+            this.completeLogin.StyleManager = null;
+            this.completeLogin.TabIndex = 5;
+            this.completeLogin.Text = "LOGIN";
+            this.completeLogin.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.completeLogin.Click += new System.EventHandler(this.completeLogin_Click);
+            // 
+            // Login_userBox
+            // 
+            this.Login_userBox.CustomBackground = false;
+            this.Login_userBox.CustomForeColor = true;
+            this.Login_userBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.Login_userBox.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
+            this.Login_userBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Login_userBox.Location = new System.Drawing.Point(13, 122);
+            this.Login_userBox.Multiline = true;
+            this.Login_userBox.Name = "Login_userBox";
+            this.Login_userBox.SelectedText = "";
+            this.Login_userBox.Size = new System.Drawing.Size(270, 36);
+            this.Login_userBox.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Login_userBox.StyleManager = null;
+            this.Login_userBox.TabIndex = 4;
+            this.Login_userBox.Text = "Username";
+            this.Login_userBox.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Login_userBox.UseStyleColors = false;
+            // 
+            // Login_passBox
+            // 
+            this.Login_passBox.CustomBackground = false;
+            this.Login_passBox.CustomForeColor = true;
+            this.Login_passBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.Login_passBox.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
+            this.Login_passBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Login_passBox.Location = new System.Drawing.Point(13, 164);
+            this.Login_passBox.Multiline = true;
+            this.Login_passBox.Name = "Login_passBox";
+            this.Login_passBox.SelectedText = "";
+            this.Login_passBox.Size = new System.Drawing.Size(270, 36);
+            this.Login_passBox.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Login_passBox.StyleManager = null;
+            this.Login_passBox.TabIndex = 3;
+            this.Login_passBox.Text = "Password";
+            this.Login_passBox.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Login_passBox.UseStyleColors = false;
+            // 
             // register
             // 
             this.register.BackColor = System.Drawing.Color.IndianRed;
@@ -99,73 +201,38 @@
             this.register.VerticalScrollbarHighlightOnWheel = false;
             this.register.VerticalScrollbarSize = 0;
             // 
-            // Login_passBox
+            // spinnerRegister
             // 
-            this.Login_passBox.CustomBackground = false;
-            this.Login_passBox.CustomForeColor = true;
-            this.Login_passBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.Login_passBox.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
-            this.Login_passBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Login_passBox.Location = new System.Drawing.Point(13, 164);
-            this.Login_passBox.Multiline = true;
-            this.Login_passBox.Name = "Login_passBox";
-            this.Login_passBox.SelectedText = "";
-            this.Login_passBox.Size = new System.Drawing.Size(270, 36);
-            this.Login_passBox.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Login_passBox.StyleManager = null;
-            this.Login_passBox.TabIndex = 3;
-            this.Login_passBox.Text = "Password";
-            this.Login_passBox.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Login_passBox.UseStyleColors = false;
+            this.spinnerRegister.Backwards = true;
+            this.spinnerRegister.CustomBackground = false;
+            this.spinnerRegister.Location = new System.Drawing.Point(143, 33);
+            this.spinnerRegister.Maximum = 100;
+            this.spinnerRegister.Name = "spinnerRegister";
+            this.spinnerRegister.Size = new System.Drawing.Size(16, 16);
+            this.spinnerRegister.Style = MetroFramework.MetroColorStyle.Teal;
+            this.spinnerRegister.StyleManager = null;
+            this.spinnerRegister.TabIndex = 3;
+            this.spinnerRegister.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.spinnerRegister.Value = 33;
             // 
-            // Login_userBox
+            // Register_nameBox
             // 
-            this.Login_userBox.CustomBackground = false;
-            this.Login_userBox.CustomForeColor = true;
-            this.Login_userBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.Login_userBox.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
-            this.Login_userBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Login_userBox.Location = new System.Drawing.Point(13, 122);
-            this.Login_userBox.Multiline = true;
-            this.Login_userBox.Name = "Login_userBox";
-            this.Login_userBox.SelectedText = "";
-            this.Login_userBox.Size = new System.Drawing.Size(270, 36);
-            this.Login_userBox.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Login_userBox.StyleManager = null;
-            this.Login_userBox.TabIndex = 4;
-            this.Login_userBox.Text = "Username";
-            this.Login_userBox.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Login_userBox.UseStyleColors = false;
-            // 
-            // completeLogin
-            // 
-            this.completeLogin.Highlight = false;
-            this.completeLogin.Location = new System.Drawing.Point(13, 221);
-            this.completeLogin.Name = "completeLogin";
-            this.completeLogin.Size = new System.Drawing.Size(270, 45);
-            this.completeLogin.Style = MetroFramework.MetroColorStyle.Blue;
-            this.completeLogin.StyleManager = null;
-            this.completeLogin.TabIndex = 5;
-            this.completeLogin.Text = "LOGIN";
-            this.completeLogin.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // gotoRegister
-            // 
-            this.gotoRegister.CustomBackground = false;
-            this.gotoRegister.CustomForeColor = true;
-            this.gotoRegister.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.gotoRegister.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.gotoRegister.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.gotoRegister.Location = new System.Drawing.Point(207, 288);
-            this.gotoRegister.Name = "gotoRegister";
-            this.gotoRegister.Size = new System.Drawing.Size(75, 23);
-            this.gotoRegister.Style = MetroFramework.MetroColorStyle.Blue;
-            this.gotoRegister.StyleManager = null;
-            this.gotoRegister.TabIndex = 6;
-            this.gotoRegister.Text = "REGISTER";
-            this.gotoRegister.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.gotoRegister.UseStyleColors = false;
-            this.gotoRegister.Click += new System.EventHandler(this.gotoRegister_Click);
+            this.Register_nameBox.CustomBackground = false;
+            this.Register_nameBox.CustomForeColor = true;
+            this.Register_nameBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.Register_nameBox.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
+            this.Register_nameBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Register_nameBox.Location = new System.Drawing.Point(13, 80);
+            this.Register_nameBox.Multiline = true;
+            this.Register_nameBox.Name = "Register_nameBox";
+            this.Register_nameBox.SelectedText = "";
+            this.Register_nameBox.Size = new System.Drawing.Size(270, 36);
+            this.Register_nameBox.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Register_nameBox.StyleManager = null;
+            this.Register_nameBox.TabIndex = 11;
+            this.Register_nameBox.Text = "Name";
+            this.Register_nameBox.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Register_nameBox.UseStyleColors = false;
             // 
             // gotoLogin
             // 
@@ -196,6 +263,7 @@
             this.completeRegister.TabIndex = 9;
             this.completeRegister.Text = "REGISTER";
             this.completeRegister.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.completeRegister.Click += new System.EventHandler(this.completeRegister_Click);
             // 
             // Register_userBox
             // 
@@ -235,72 +303,6 @@
             this.Register_passBox.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Register_passBox.UseStyleColors = false;
             // 
-            // Register_nameBox
-            // 
-            this.Register_nameBox.CustomBackground = false;
-            this.Register_nameBox.CustomForeColor = true;
-            this.Register_nameBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.Register_nameBox.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
-            this.Register_nameBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Register_nameBox.Location = new System.Drawing.Point(13, 80);
-            this.Register_nameBox.Multiline = true;
-            this.Register_nameBox.Name = "Register_nameBox";
-            this.Register_nameBox.SelectedText = "";
-            this.Register_nameBox.Size = new System.Drawing.Size(270, 36);
-            this.Register_nameBox.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Register_nameBox.StyleManager = null;
-            this.Register_nameBox.TabIndex = 11;
-            this.Register_nameBox.Text = "Name";
-            this.Register_nameBox.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Register_nameBox.UseStyleColors = false;
-            // 
-            // spinnerRegister
-            // 
-            this.spinnerRegister.Backwards = true;
-            this.spinnerRegister.CustomBackground = false;
-            this.spinnerRegister.Location = new System.Drawing.Point(143, 33);
-            this.spinnerRegister.Maximum = 100;
-            this.spinnerRegister.Name = "spinnerRegister";
-            this.spinnerRegister.Size = new System.Drawing.Size(16, 16);
-            this.spinnerRegister.Style = MetroFramework.MetroColorStyle.Teal;
-            this.spinnerRegister.StyleManager = null;
-            this.spinnerRegister.TabIndex = 3;
-            this.spinnerRegister.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.spinnerRegister.Value = 33;
-            // 
-            // spinnerLogin
-            // 
-            this.spinnerLogin.Backwards = true;
-            this.spinnerLogin.CustomBackground = false;
-            this.spinnerLogin.Location = new System.Drawing.Point(143, 33);
-            this.spinnerLogin.Maximum = 100;
-            this.spinnerLogin.Name = "spinnerLogin";
-            this.spinnerLogin.Size = new System.Drawing.Size(16, 16);
-            this.spinnerLogin.Style = MetroFramework.MetroColorStyle.Teal;
-            this.spinnerLogin.StyleManager = null;
-            this.spinnerLogin.TabIndex = 7;
-            this.spinnerLogin.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.spinnerLogin.Value = 33;
-            // 
-            // metroCheckBox1
-            // 
-            this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.CustomBackground = false;
-            this.metroCheckBox1.CustomForeColor = true;
-            this.metroCheckBox1.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.metroCheckBox1.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.metroCheckBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.metroCheckBox1.Location = new System.Drawing.Point(13, 284);
-            this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(89, 19);
-            this.metroCheckBox1.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroCheckBox1.StyleManager = null;
-            this.metroCheckBox1.TabIndex = 8;
-            this.metroCheckBox1.Text = "Auto login";
-            this.metroCheckBox1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroCheckBox1.UseStyleColors = true;
-            this.metroCheckBox1.UseVisualStyleBackColor = true;
-            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
@@ -326,8 +328,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 432);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.login);
             this.Controls.Add(this.register);
+            this.Controls.Add(this.login);
             this.Location = new System.Drawing.Point(0, 0);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
