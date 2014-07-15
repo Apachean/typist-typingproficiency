@@ -54,7 +54,7 @@ namespace Typist
             register.SendToBack();
         }
 
-        private void createUser_AsROOT(string user, string pass)
+        private void createUser_AsROOT(string user, string pass, string name)
         {
             // TODO: Disallow use of the character '_' so there can be no error with create database
             // TODO: MetroUI MessageBox
@@ -94,6 +94,30 @@ namespace Typist
                     // Char 92 is '\'
                     cmd.CommandText = "GRANT ALL PRIVILEGES ON `" + user + (char) 92 + "_db`.* TO '" + user + "'@'127.0.0.1' WITH GRANT OPTION";
                     cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "CREATE TABLE IF NOT EXISTS `" + user + "_db" + @"`.`global` (
+                                `Date started` VARCHAR(18) NOT NULL DEFAULT '" + DateTime.Today.ToString("yyyy-MM-dd") + @"',
+                                `Date` VARCHAR(18) NULL,
+                                `Name` VARCHAR(36) NULL,
+                                `Time spent in typekey-documents` FLOAT UNSIGNED ZEROFILL NULL,
+                                `Keys per millisecond` FLOAT UNSIGNED ZEROFILL NULL,
+                                `Number of incorrectly pressed keys` BIGINT UNSIGNED ZEROFILL NULL,
+                                `Number of correctly pressed keys` BIGINT UNSIGNED ZEROFILL NULL,
+                                `Longest time inbetween pressed keys` FLOAT UNSIGNED ZEROFILL NULL,
+                                `Quickest time inbetween pressed keys` FLOAT UNSIGNED ZEROFILL NULL,
+                                `Typekey-documents completion` VARCHAR(45) NULL,
+                                PRIMARY KEY (`Date started`));";
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "USE " + user + "_db";
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "INSERT INTO `" + user + @"_db`.`global`
+                                        (`Name`)
+                                        VALUES
+                                        ('" + name + "');";
+                    cmd.ExecuteNonQuery();
+
                 }
 
             }
@@ -107,8 +131,13 @@ namespace Typist
             // Goto login
             login.BringToFront();
             register.SendToBack();
-
         }
+
+        // IGNORE THIS VOID
+        private void genGlobaltable(MySqlConnection conn, MySqlCommand cmd, string user, string pass)
+        {
+        }
+
         private void connectMySQL_AsUSER(string user, string pass)
         {
             string connstr = "server=127.0.0.1;database=" + user + "_db;" + "uid=" + user + ";port=3306;pwd=" + pass + ";";
@@ -139,7 +168,7 @@ namespace Typist
 
         private void completeRegister_Click(object sender, EventArgs e)
         {
-            createUser_AsROOT(Register_userBox.Text, Register_passBox.Text);
+            createUser_AsROOT(Register_userBox.Text, Register_passBox.Text, Register_nameBox.Text);
         }
     }
 }

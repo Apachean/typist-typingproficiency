@@ -88,7 +88,7 @@
             this.autoLogin.Size = new System.Drawing.Size(89, 19);
             this.autoLogin.Style = MetroFramework.MetroColorStyle.Lime;
             this.autoLogin.StyleManager = null;
-            this.autoLogin.TabIndex = 8;
+            this.autoLogin.TabIndex = 3;
             this.autoLogin.Text = "Auto login";
             this.autoLogin.Theme = MetroFramework.MetroThemeStyle.Light;
             this.autoLogin.UseStyleColors = true;
@@ -134,7 +134,7 @@
             this.completeLogin.Size = new System.Drawing.Size(270, 45);
             this.completeLogin.Style = MetroFramework.MetroColorStyle.Blue;
             this.completeLogin.StyleManager = null;
-            this.completeLogin.TabIndex = 5;
+            this.completeLogin.TabIndex = 2;
             this.completeLogin.Text = "LOGIN";
             this.completeLogin.Theme = MetroFramework.MetroThemeStyle.Light;
             this.completeLogin.Click += new System.EventHandler(this.completeLogin_Click);
@@ -154,7 +154,7 @@
             this.Login_userBox.Size = new System.Drawing.Size(270, 36);
             this.Login_userBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.Login_userBox.StyleManager = null;
-            this.Login_userBox.TabIndex = 4;
+            this.Login_userBox.TabIndex = 0;
             this.Login_userBox.Text = global::Typist.Properties.Settings.Default.uid;
             this.Login_userBox.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Login_userBox.UseStyleColors = false;
@@ -174,7 +174,7 @@
             this.Login_passBox.Size = new System.Drawing.Size(270, 36);
             this.Login_passBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.Login_passBox.StyleManager = null;
-            this.Login_passBox.TabIndex = 3;
+            this.Login_passBox.TabIndex = 1;
             this.Login_passBox.Text = global::Typist.Properties.Settings.Default.pwd;
             this.Login_passBox.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Login_passBox.UseStyleColors = false;
@@ -233,7 +233,7 @@
             this.Register_nameBox.Size = new System.Drawing.Size(270, 36);
             this.Register_nameBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.Register_nameBox.StyleManager = null;
-            this.Register_nameBox.TabIndex = 11;
+            this.Register_nameBox.TabIndex = 0;
             this.Register_nameBox.Text = "Name";
             this.Register_nameBox.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Register_nameBox.UseStyleColors = false;
@@ -264,7 +264,7 @@
             this.completeRegister.Size = new System.Drawing.Size(270, 45);
             this.completeRegister.Style = MetroFramework.MetroColorStyle.Blue;
             this.completeRegister.StyleManager = null;
-            this.completeRegister.TabIndex = 9;
+            this.completeRegister.TabIndex = 3;
             this.completeRegister.Text = "REGISTER";
             this.completeRegister.Theme = MetroFramework.MetroThemeStyle.Light;
             this.completeRegister.Click += new System.EventHandler(this.completeRegister_Click);
@@ -283,7 +283,7 @@
             this.Register_userBox.Size = new System.Drawing.Size(270, 36);
             this.Register_userBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.Register_userBox.StyleManager = null;
-            this.Register_userBox.TabIndex = 8;
+            this.Register_userBox.TabIndex = 1;
             this.Register_userBox.Text = "Username";
             this.Register_userBox.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Register_userBox.UseStyleColors = false;
@@ -302,7 +302,7 @@
             this.Register_passBox.Size = new System.Drawing.Size(270, 36);
             this.Register_passBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.Register_passBox.StyleManager = null;
-            this.Register_passBox.TabIndex = 7;
+            this.Register_passBox.TabIndex = 2;
             this.Register_passBox.Text = "Password";
             this.Register_passBox.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Register_passBox.UseStyleColors = false;
