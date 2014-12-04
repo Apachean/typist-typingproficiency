@@ -6,7 +6,7 @@
       <Value Profile="(Default)">Username</Value>
     </Setting>
     <Setting Name="pwd" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Password</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="checkAutoLogin" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

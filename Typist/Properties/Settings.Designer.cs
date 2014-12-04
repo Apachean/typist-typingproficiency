@@ -37,7 +37,7 @@ namespace Typist.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Password")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string pwd {
             get {
                 return ((string)(this["pwd"]));
